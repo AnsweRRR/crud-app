@@ -6,6 +6,7 @@ import { useTheme } from "next-themes"
 import { useTranslation } from "react-i18next"
 import { GB, HU } from 'country-flag-icons/react/3x2'
 import { ColorPicker } from "../color-picker"
+import { SidebarTrigger } from "./sidebar"
 
 export function Navbar() {
   const { setTheme, theme } = useTheme()
@@ -18,6 +19,7 @@ export function Navbar() {
   return (
     <div className="border-b">
       <div className="flex h-16 items-center px-4">
+        <SidebarTrigger />
         <Breadcrumb>
           <BreadcrumbItem>
             <BreadcrumbLink href="/">{t('home')}</BreadcrumbLink>
