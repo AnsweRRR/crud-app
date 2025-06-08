@@ -1,27 +1,21 @@
 import { AppSidebar } from "./components/app-sidebar";
-import { SidebarProvider, SidebarTrigger } from "./components/ui/sidebar";
+import { SidebarProvider } from "./components/ui/sidebar";
+import { Navbar } from "./components/ui/navbar";
+import { ThemeProvider } from "./components/theme-provider";
 import UsersPage from "./pages/UsersPage"
 
 const App = () => {
 
   return (
-    <>
-      {/* <SidebarProvider>
-        <AppSidebar />
-        <main>
-          <SidebarTrigger />
-        </main>
-        <UsersPage />
-      </SidebarProvider> */}
-
+    <ThemeProvider>
       <SidebarProvider>
         <AppSidebar />
-          <div className="flex flex-1 flex-col">
-            <SidebarTrigger />
-            <UsersPage />
-          </div>
+        <div className="flex flex-1 flex-col">
+          <Navbar />
+          <UsersPage />
+        </div>
       </SidebarProvider>
-    </>
+    </ThemeProvider>
   )
 }
 
