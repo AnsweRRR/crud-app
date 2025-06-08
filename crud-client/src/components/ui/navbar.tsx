@@ -5,7 +5,7 @@ import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useTranslation } from "react-i18next"
 import { GB, HU } from 'country-flag-icons/react/3x2'
-import { SidebarTrigger } from "./sidebar"
+import { ThemePicker } from "../theme-picker"
 
 export function Navbar() {
   const { setTheme, theme } = useTheme()
@@ -18,7 +18,6 @@ export function Navbar() {
   return (
     <div className="border-b">
       <div className="flex h-16 items-center px-4">
-        <SidebarTrigger />
         <Breadcrumb>
           <BreadcrumbItem>
             <BreadcrumbLink href="/">{t('home')}</BreadcrumbLink>
@@ -46,6 +45,7 @@ export function Navbar() {
               </SelectItem>
             </SelectContent>
           </Select>
+          <ThemePicker />
           <Button
             variant="ghost"
             size="icon"
