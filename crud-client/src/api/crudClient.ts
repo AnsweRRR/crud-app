@@ -20,44 +20,79 @@ export function createCrudClient<T>(baseEndpoint: string): CrudClient<T> {
         return res.data;
       } catch (error) {
         console.error(error);
-        return [];
+        throw error;
       }
     },
     getById: async (id: number) => {
-      const res = await axios.get(`${baseEndpoint}/${id}`);
-      return res.data;
+      try {
+        const res = await axios.get(`${baseEndpoint}/${id}`);
+        return res.data;
+      } catch (error) {
+        console.error(error);
+        throw error;
+      }
     },
     create: async (dto: Partial<T>) => {
-      const res = await axios.post(`${baseEndpoint}/create`, dto);
-      return res.data;
+      try {
+        const res = await axios.post(`${baseEndpoint}/create`, dto);
+        return res.data;
+      } catch (error) {
+        console.error(error);
+        throw error;
+      }
     },
     update: async (id: number, dto: Partial<T>) => {
-      const res = await axios.patch(`${baseEndpoint}/edit`, dto, {
-        params: { id },
-      });
-      return res.data;
+      try {
+        const res = await axios.patch(`${baseEndpoint}/edit`, dto, {
+          params: { id },
+        });
+        return res.data;
+      } catch (error) {
+        console.error(error);
+        throw error;
+      }
     },
     delete: async (ids: Array<number>) => {
-      const res = await axios.delete(`${baseEndpoint}/delete`, {
-        data: ids,
-      });
-      return res.data;
+      try {
+        const res = await axios.delete(`${baseEndpoint}/delete`, {
+          data: ids,
+        });
+        return res.data;
+      } catch (error) {
+        console.error(error);
+        throw error;
+      }
     },
     activate: async (ids: Array<number>) => {
-      const res = await axios.post(`${baseEndpoint}/activate`, {
-        data: ids,
-      });
-      return res.data;
+      try {
+        const res = await axios.post(`${baseEndpoint}/activate`, {
+          data: ids,
+        });
+        return res.data;
+      } catch (error) {
+        console.error(error);
+        throw error;
+      }
     },
     inactivate: async (ids: Array<number>) => {
-      const res = await axios.post(`${baseEndpoint}/inactivate`, {
-        data: ids,
-      });
-      return res.data;
+      try {
+        const res = await axios.post(`${baseEndpoint}/inactivate`, {
+          data: ids,
+        });
+        return res.data;
+      } catch (error) {
+        console.error(error);
+        throw error;
+      }
     },
     audit: async (id: number) => {
-      const res = await axios.get(`${baseEndpoint}/audit/${id}`);
-      return res.data;
+      try {
+        const res = await axios.get(`${baseEndpoint}/audit/${id}`);
+        return res.data;
+      } catch (error) {
+        console.error(error);
+        throw error;
+      }
     },
   };
 }

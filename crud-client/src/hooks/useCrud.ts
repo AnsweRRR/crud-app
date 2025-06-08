@@ -1,23 +1,26 @@
 import type { Audit } from "@/@types/audit";
 import type { CrudClient } from "@/api/crudClient";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 export function useCrud<T extends { id: number }>(client: CrudClient<T>) {
   const [data, setData] = useState<T[]>([]);
   const [auditData, setAuditData] = useState<Audit | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
+  const navigate = useNavigate();
 
-  const refresh = async () => {
+  const getAllData = async () => {
     setLoading(true);
     setError(null);
     try {
       const all = await client.getAll();
-      setData(Array.isArray(all) ? all : []);
+      setData(all);
     } catch (error) {
       console.error(error);
-      setData([]);
       setError(error as Error);
+      navigate("/500");
     } finally {
       setLoading(false);
     }
@@ -30,6 +33,7 @@ export function useCrud<T extends { id: number }>(client: CrudClient<T>) {
       return res;
     } catch (err) {
       console.error(err);
+      toast.error(err instanceof Error ? err.message : "Hiba történt a létrehozás során");
       throw err;
     }
   };
@@ -43,6 +47,9 @@ export function useCrud<T extends { id: number }>(client: CrudClient<T>) {
       return res;
     } catch (err) {
       console.error(err);
+      toast.error(err instanceof Error ? err.message : "Hiba történt a frissítés során", {
+        className: "bg-red-500 text-white border-red-600",
+      });
       throw err;
     }
   };
@@ -54,6 +61,9 @@ export function useCrud<T extends { id: number }>(client: CrudClient<T>) {
       return res;
     } catch (err) {
       console.error(err);
+      toast.error(err instanceof Error ? err.message : "Hiba történt a törlés során", {
+        className: "bg-red-500 text-white border-red-600",
+      });
       throw err;
     }
   };
@@ -69,6 +79,9 @@ export function useCrud<T extends { id: number }>(client: CrudClient<T>) {
       return res;
     } catch (err) {
       console.error(err);
+      toast.error(err instanceof Error ? err.message : "Hiba történt az aktiválás során", {
+        className: "bg-red-500 text-white border-red-600",
+      });
       throw err;
     }
   };
@@ -84,6 +97,9 @@ export function useCrud<T extends { id: number }>(client: CrudClient<T>) {
       return res;
     } catch (err) {
       console.error(err);
+      toast.error(err instanceof Error ? err.message : "Hiba történt a deaktiválás során", {
+        className: "bg-red-500 text-white border-red-600",
+      });
       throw err;
     }
   };
@@ -95,12 +111,15 @@ export function useCrud<T extends { id: number }>(client: CrudClient<T>) {
       return res;
     } catch (err) {
       console.error(err);
+      toast.error(err instanceof Error ? err.message : "Hiba történt az audit lekérdezés során", {
+        className: "bg-red-500 text-white border-red-600",
+      });
       throw err;
     }
   };
 
   useEffect(() => {
-    refresh();
+    getAllData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -115,6 +134,6 @@ export function useCrud<T extends { id: number }>(client: CrudClient<T>) {
     activate,
     inactivate,
     audit,
-    refresh,
+    getAllData,
   };
 }
