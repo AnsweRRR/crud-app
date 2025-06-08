@@ -23,10 +23,14 @@ dist-ssr
 *.sln
 *.sw?
 
-# .NET Core
+# .NET Core build files
 bin/
 obj/
 .vs/
 *.user
 *.suo
+*.cache
+*.pdb
+*.dll
+*.exe
 *.db
