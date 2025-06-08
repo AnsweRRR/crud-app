@@ -9,9 +9,9 @@ interface ThemeProviderProps {
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   return (
     <NextThemesProvider
-      attribute="data-theme"
-      defaultTheme="default"
-      enableSystem={false}
+      attribute="class"
+      defaultTheme="system"
+      enableSystem={true}
       {...props}
     >
       {children}

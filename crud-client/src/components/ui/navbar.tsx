@@ -5,7 +5,7 @@ import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useTranslation } from "react-i18next"
 import { GB, HU } from 'country-flag-icons/react/3x2'
-import { ThemePicker } from "../theme-picker"
+import { ColorPicker } from "../color-picker"
 
 export function Navbar() {
   const { setTheme, theme } = useTheme()
@@ -45,7 +45,7 @@ export function Navbar() {
               </SelectItem>
             </SelectContent>
           </Select>
-          <ThemePicker />
+          <ColorPicker />
           <Button
             variant="ghost"
             size="icon"
