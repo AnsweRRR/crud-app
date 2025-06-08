@@ -8,6 +8,9 @@ import {
 import { Check, Palette } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { useColor } from "./color-provider"
+import { themes } from "@/lib/themes"
+import { useTheme } from "next-themes"
+import { useEffect } from "react"
 
 const colors = [
   { name: "default", label: "Default", color: "bg-gray-500" },
@@ -23,6 +26,27 @@ const colors = [
 export function ColorPicker() {
   const { color, setColor } = useColor()
   const { t } = useTranslation()
+  const { theme: mode } = useTheme()
+
+  const applyTheme = (themeName: string) => {
+    const theme = themes[themeName]
+    if (!theme) return
+
+    const root = document.documentElement
+    const themeColors = mode === "dark" ? theme.dark : theme.light
+
+    Object.entries(themeColors).forEach(([key, value]) => {
+      root.style.setProperty(key, value)
+    })
+  }
+
+  useEffect(() => {
+    applyTheme(color)
+  }, [color, mode])
+
+  const handleColorChange = (colorName: string) => {
+    setColor(colorName)
+  }
 
   return (
     <DropdownMenu>
@@ -36,7 +60,7 @@ export function ColorPicker() {
         {colors.map((c) => (
           <DropdownMenuItem
             key={c.name}
-            onClick={() => setColor(c.name)}
+            onClick={() => handleColorChange(c.name)}
             className="flex items-center justify-between gap-2"
           >
             <div className="flex items-center gap-2">
