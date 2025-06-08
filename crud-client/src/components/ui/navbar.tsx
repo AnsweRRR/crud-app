@@ -1,7 +1,7 @@
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "./breadcrumb"
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "./breadcrumb"
 import { Button } from "./button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./select"
-import { Moon, Sun } from "lucide-react"
+import { Moon, SlashIcon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useTranslation } from "react-i18next"
 import { GB, HU } from 'country-flag-icons/react/3x2'
@@ -21,12 +21,17 @@ export function Navbar() {
       <div className="flex h-16 items-center px-4">
         <SidebarTrigger />
         <Breadcrumb>
-          <BreadcrumbItem>
-            <BreadcrumbLink href="/">{t('home')}</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbItem>
-            <BreadcrumbLink href="/users">{t('users')}</BreadcrumbLink>
-          </BreadcrumbItem>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">{t('home')}</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator>
+              <SlashIcon />
+            </BreadcrumbSeparator>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/users">{t('users')}</BreadcrumbLink>
+            </BreadcrumbItem>
+          </BreadcrumbList>
         </Breadcrumb>
         <div className="ml-auto flex items-center space-x-4">
           <Select 
