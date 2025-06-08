@@ -17,4 +17,10 @@ const Loadable = (Component: ElementType) => (props: any) =>
 // export const NewPasswordPage = Loadable(lazy(() => import('../pages/auth/NewPasswordPage')));
 // export const ResetPasswordPage = Loadable(lazy(() => import('../pages/auth/ResetPasswordPage')));
 
-export const UsersPage = Loadable(lazy(() => import('../pages/UsersPage')));
+export const UsersPage = Loadable(lazy(() => import('../pages/maintenance/UsersPage')));
+
+
+
+export const Page403 = Loadable(lazy(() => import('../pages/error/Page403')));
+export const Page404 = Loadable(lazy(() => import('../pages/error/Page404')));
+export const Page500 = Loadable(lazy(() => import('../pages/error/Page500')));

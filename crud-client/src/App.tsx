@@ -3,7 +3,7 @@ import { SidebarProvider } from "./components/ui/sidebar";
 import { Navbar } from "./components/ui/navbar";
 import { ThemeProvider } from "./components/theme-provider";
 import { ColorProvider } from "./components/color-provider";
-import UsersPage from "./pages/UsersPage";
+import UsersPage from "./pages/maintenance/UsersPage";
 import { BrowserRouter } from 'react-router-dom';
 // import Router from './routes';
 
