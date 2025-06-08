@@ -1,0 +1,124 @@
+[
+  {
+    "ContainingType": "crud_api.Controllers.BaseCrudController\u00601[[crud_api.BusinessLogic.DTOs.Maintenance.UserDTO, crud-api.BusinessLogic, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Get",
+    "RelativePath": "api/User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "crud_api.Controllers.BaseCrudController\u00601[[crud_api.BusinessLogic.DTOs.Maintenance.UserDTO, crud-api.BusinessLogic, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetItem",
+    "RelativePath": "api/User/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "crud_api.Controllers.BaseStatusCrudController\u00601[[crud_api.BusinessLogic.DTOs.Maintenance.UserDTO, crud-api.BusinessLogic, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Activate",
+    "RelativePath": "api/User/activate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ids",
+        "Type": "System.Collections.Generic.IList\u00601[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "crud_api.Controllers.BaseCrudController\u00601[[crud_api.BusinessLogic.DTOs.Maintenance.UserDTO, crud-api.BusinessLogic, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Audit",
+    "RelativePath": "api/User/audit/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "crud_api.Controllers.BaseCrudController\u00601[[crud_api.BusinessLogic.DTOs.Maintenance.UserDTO, crud-api.BusinessLogic, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Create",
+    "RelativePath": "api/User/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "crud_api.BusinessLogic.DTOs.Maintenance.UserDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "crud_api.Controllers.BaseCrudController\u00601[[crud_api.BusinessLogic.DTOs.Maintenance.UserDTO, crud-api.BusinessLogic, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Delete",
+    "RelativePath": "api/User/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ids",
+        "Type": "System.Collections.Generic.IList\u00601[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "crud_api.Controllers.BaseCrudController\u00601[[crud_api.BusinessLogic.DTOs.Maintenance.UserDTO, crud-api.BusinessLogic, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Edit",
+    "RelativePath": "api/User/edit",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "crud_api.BusinessLogic.DTOs.Maintenance.UserDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "crud_api.Controllers.BaseStatusCrudController\u00601[[crud_api.BusinessLogic.DTOs.Maintenance.UserDTO, crud-api.BusinessLogic, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Inactivate",
+    "RelativePath": "api/User/inactivate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ids",
+        "Type": "System.Collections.Generic.IList\u00601[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

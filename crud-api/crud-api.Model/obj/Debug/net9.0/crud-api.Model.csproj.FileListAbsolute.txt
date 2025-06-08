@@ -1,0 +1,11 @@
+D:\Repos\crud-api\crud-api.Model\bin\Debug\net9.0\crud-api.Model.deps.json
+D:\Repos\crud-api\crud-api.Model\bin\Debug\net9.0\crud-api.Model.dll
+D:\Repos\crud-api\crud-api.Model\bin\Debug\net9.0\crud-api.Model.pdb
+D:\Repos\crud-api\crud-api.Model\obj\Debug\net9.0\crud-api.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repos\crud-api\crud-api.Model\obj\Debug\net9.0\crud-api.Model.AssemblyInfoInputs.cache
+D:\Repos\crud-api\crud-api.Model\obj\Debug\net9.0\crud-api.Model.AssemblyInfo.cs
+D:\Repos\crud-api\crud-api.Model\obj\Debug\net9.0\crud-api.Model.csproj.CoreCompileInputs.cache
+D:\Repos\crud-api\crud-api.Model\obj\Debug\net9.0\crud-api.Model.dll
+D:\Repos\crud-api\crud-api.Model\obj\Debug\net9.0\refint\crud-api.Model.dll
+D:\Repos\crud-api\crud-api.Model\obj\Debug\net9.0\crud-api.Model.pdb
+D:\Repos\crud-api\crud-api.Model\obj\Debug\net9.0\ref\crud-api.Model.dll

@@ -1,0 +1,28 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "crud-api.Resource/1.0.0": {
+        "runtime": {
+          "crud-api.Resource.dll": {}
+        },
+        "resources": {
+          "hu/crud-api.Resource.resources.dll": {
+            "locale": "hu"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "crud-api.Resource/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

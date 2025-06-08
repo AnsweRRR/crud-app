@@ -1,0 +1,16 @@
+D:\Repos\crud-api\crud-api.Resource\bin\Debug\net9.0\crud-api.Resource.deps.json
+D:\Repos\crud-api\crud-api.Resource\bin\Debug\net9.0\crud-api.Resource.dll
+D:\Repos\crud-api\crud-api.Resource\bin\Debug\net9.0\crud-api.Resource.pdb
+D:\Repos\crud-api\crud-api.Resource\bin\Debug\net9.0\hu\crud-api.Resource.resources.dll
+D:\Repos\crud-api\crud-api.Resource\obj\Debug\net9.0\crud_api.Resource.Localization.Localization.resources
+D:\Repos\crud-api\crud-api.Resource\obj\Debug\net9.0\crud_api.Resource.Localization.Localization.hu.resources
+D:\Repos\crud-api\crud-api.Resource\obj\Debug\net9.0\crud-api.Resource.csproj.GenerateResource.cache
+D:\Repos\crud-api\crud-api.Resource\obj\Debug\net9.0\crud-api.Resource.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repos\crud-api\crud-api.Resource\obj\Debug\net9.0\crud-api.Resource.AssemblyInfoInputs.cache
+D:\Repos\crud-api\crud-api.Resource\obj\Debug\net9.0\crud-api.Resource.AssemblyInfo.cs
+D:\Repos\crud-api\crud-api.Resource\obj\Debug\net9.0\crud-api.Resource.csproj.CoreCompileInputs.cache
+D:\Repos\crud-api\crud-api.Resource\obj\Debug\net9.0\hu\crud-api.Resource.resources.dll
+D:\Repos\crud-api\crud-api.Resource\obj\Debug\net9.0\crud-api.Resource.dll
+D:\Repos\crud-api\crud-api.Resource\obj\Debug\net9.0\refint\crud-api.Resource.dll
+D:\Repos\crud-api\crud-api.Resource\obj\Debug\net9.0\crud-api.Resource.pdb
+D:\Repos\crud-api\crud-api.Resource\obj\Debug\net9.0\ref\crud-api.Resource.dll

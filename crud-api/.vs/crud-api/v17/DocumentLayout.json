@@ -1,0 +1,86 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Repos\\crud-api\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5C9B3A65-149B-400B-969B-39933A2C5A59}|crud-api.BusinessLogic\\crud-api.BusinessLogic.csproj|d:\\repos\\crud-api\\crud-api.businesslogic\\services\\maintenance\\userbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C9B3A65-149B-400B-969B-39933A2C5A59}|crud-api.BusinessLogic\\crud-api.BusinessLogic.csproj|solutionrelative:crud-api.businesslogic\\services\\maintenance\\userbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D601C4F0-D09B-4079-B54B-EFA023E053EE}|crud-api\\crud-api.Server.csproj|d:\\repos\\crud-api\\crud-api\\controllers\\basestatuscrudcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D601C4F0-D09B-4079-B54B-EFA023E053EE}|crud-api\\crud-api.Server.csproj|solutionrelative:crud-api\\controllers\\basestatuscrudcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:11:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BaseStatusCrudController.cs",
+              "DocumentMoniker": "D:\\Repos\\crud-api\\crud-api\\Controllers\\BaseStatusCrudController.cs",
+              "RelativeDocumentMoniker": "crud-api\\Controllers\\BaseStatusCrudController.cs",
+              "ToolTip": "D:\\Repos\\crud-api\\crud-api\\Controllers\\BaseStatusCrudController.cs",
+              "RelativeToolTip": "crud-api\\Controllers\\BaseStatusCrudController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T15:54:10.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserBL.cs",
+              "DocumentMoniker": "D:\\Repos\\crud-api\\crud-api.BusinessLogic\\Services\\Maintenance\\UserBL.cs",
+              "RelativeDocumentMoniker": "crud-api.BusinessLogic\\Services\\Maintenance\\UserBL.cs",
+              "ToolTip": "D:\\Repos\\crud-api\\crud-api.BusinessLogic\\Services\\Maintenance\\UserBL.cs",
+              "RelativeToolTip": "crud-api.BusinessLogic\\Services\\Maintenance\\UserBL.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAArwFIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T15:31:54.45Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
