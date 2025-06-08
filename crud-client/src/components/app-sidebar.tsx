@@ -10,6 +10,7 @@ import {
   PieChart,
   Settings2,
   SquareTerminal,
+  Wrench,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
@@ -49,6 +50,30 @@ const data = {
     },
   ],
   navMain: [
+    {
+      title: "Karbantartás",
+      url: "/maintenance",
+      icon: Wrench,
+      isActive: true,
+      items: [
+        {
+          title: "Felhasználók",
+          url: "/maintenance/user",
+        },
+        {
+          title: "Rendszerbeállítások",
+          url: "/maintenance/settings",
+        },
+        {
+          title: "Adatbázis",
+          url: "/maintenance/database",
+        },
+        {
+          title: "Biztonság",
+          url: "/maintenance/security",
+        },
+      ],
+    },
     {
       title: "Playground",
       url: "#",

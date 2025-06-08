@@ -3,32 +3,25 @@ import {
   Page403,
   Page404,
   Page500,
-  UsersPage
+  UsersPage,
+  MaintenancePage
 } from './elements';
 
 export default function Router() {
   return useRoutes([
-
     // Maintenance
     {
       path: 'maintenance',
-      element: (
-        <>
-          
-        </>
-      ),
       children: [
+        { index: true, element: <MaintenancePage /> },
         { path: 'user', element: <UsersPage /> },
       ]
     },
-    {
-      element: <></>,
-      children: [
-        { path: '403', element: <Page403 /> },
-        { path: '404', element: <Page404 /> },
-        { path: '500', element: <Page500 /> },
-      ],
-    },
+    // Error pages
+    { path: '403', element: <Page403 /> },
+    { path: '404', element: <Page404 /> },
+    { path: '500', element: <Page500 /> },
+    // Catch all route - redirect to 404
     { path: '*', element: <Navigate to="/404" replace /> },
   ]);
-};
+}
