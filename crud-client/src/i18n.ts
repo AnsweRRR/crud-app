@@ -23,6 +23,7 @@ const resources = {
       maintenance: 'Karbantartás',
       user: 'Felhasználó',
       welcome: 'Üdvözöljük a CRUD alkalmazásban!',
+      app_name: 'CRUD App',
     }
   },
   en: {
@@ -45,6 +46,7 @@ const resources = {
       maintenance: 'Maintenance',
       user: 'User',
       welcome: 'Welcome to the CRUD application!',
+      app_name: 'CRUD App',
     }
   }
 };
