@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next"
 import { GB, HU } from 'country-flag-icons/react/3x2'
 import { ColorPicker } from "../color-picker"
 import { SidebarTrigger } from "./sidebar"
+import React from "react"
 
 export function Navbar() {
   const { setTheme, theme } = useTheme()
@@ -15,6 +16,12 @@ export function Navbar() {
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng)
   }
+
+  React.useEffect(() => {
+    if (!i18n.language) {
+      i18n.changeLanguage('hu');
+    }
+  }, [i18n])
 
   return (
     <div className="border-b">
@@ -35,7 +42,7 @@ export function Navbar() {
         </Breadcrumb>
         <div className="ml-auto flex items-center space-x-4">
           <Select 
-            defaultValue={i18n.language} 
+            value={i18n.language} 
             onValueChange={changeLanguage}
           >
             <SelectTrigger className="w-[120px]">

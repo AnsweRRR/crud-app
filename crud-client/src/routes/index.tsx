@@ -21,7 +21,6 @@ export default function Router() {
     { path: '403', element: <Page403 /> },
     { path: '404', element: <Page404 /> },
     { path: '500', element: <Page500 /> },
-    // Catch all route - redirect to 404
     { path: '*', element: <Navigate to="/404" replace /> },
   ]);
 }
