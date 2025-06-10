@@ -20,6 +20,8 @@ const resources = {
       blue: 'Kék',
       yellow: 'Sárga',
       violet: 'Lila',
+      maintenance: 'Karbantartás',
+      user: 'Felhasználó',
     }
   },
   en: {
@@ -39,6 +41,8 @@ const resources = {
       blue: 'Blue',
       yellow: 'Yellow',
       violet: 'Violet',
+      maintenance: 'Maintenance',
+      user: 'User',
     }
   }
 };
