@@ -22,6 +22,7 @@ const resources = {
       violet: 'Lila',
       maintenance: 'Karbantartás',
       user: 'Felhasználó',
+      welcome: 'Üdvözöljük a CRUD alkalmazásban!',
     }
   },
   en: {
@@ -43,6 +44,7 @@ const resources = {
       violet: 'Violet',
       maintenance: 'Maintenance',
       user: 'User',
+      welcome: 'Welcome to the CRUD application!',
     }
   }
 };

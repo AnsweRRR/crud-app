@@ -4,11 +4,14 @@ import {
   Page404,
   Page500,
   UsersPage,
-  MaintenancePage
+  MaintenancePage,
+  HomePage
 } from './elements';
 
 export default function Router() {
   return useRoutes([
+    // Home
+    { path: '/', element: <HomePage /> },
     // Maintenance
     {
       path: 'maintenance',
