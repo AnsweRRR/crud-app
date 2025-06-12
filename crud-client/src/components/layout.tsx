@@ -1,17 +1,14 @@
 import { AppSidebar } from "./app-sidebar";
 import { Navbar } from "./ui/navbar";
+import { Outlet } from 'react-router-dom';
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
-export const Layout = ({ children }: LayoutProps) => {
+export const Layout = () => {
   return (
     <>
       <AppSidebar />
       <div className="flex flex-1 flex-col">
         <Navbar />
-        {children}
+        <Outlet />
       </div>
     </>
   );

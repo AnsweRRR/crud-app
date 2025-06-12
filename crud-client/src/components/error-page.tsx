@@ -13,7 +13,7 @@ export function ErrorPage({ title, description, code, icon }: ErrorPageProps) {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center bg-background">
+    <div className="h-screen w-full flex items-center justify-center bg-background">
       <div className="container flex flex-col items-center justify-center gap-4 px-4 text-center md:gap-8">
         <div className="flex flex-col items-center gap-2">
           <div className="flex items-center gap-2">

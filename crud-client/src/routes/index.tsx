@@ -7,23 +7,31 @@ import {
   MaintenancePage,
   HomePage
 } from './elements';
+import { Layout } from '../components/layout';
 
 export default function Router() {
   return useRoutes([
-    // Home
-    { path: '/', element: <HomePage /> },
-    // Maintenance
+    // Main layout routes
     {
-      path: 'maintenance',
+      element: <Layout />,
       children: [
-        { index: true, element: <MaintenancePage /> },
-        { path: 'user', element: <UsersPage /> },
+        // Home
+        { path: '/', element: <HomePage /> },
+        // Maintenance
+        {
+          path: 'maintenance',
+          children: [
+            { index: true, element: <MaintenancePage /> },
+            { path: 'user', element: <UsersPage /> },
+          ]
+        },
       ]
     },
     // Error pages
     { path: '403', element: <Page403 /> },
     { path: '404', element: <Page404 /> },
     { path: '500', element: <Page500 /> },
+    // Catch all route
     { path: '*', element: <Navigate to="/404" replace /> },
   ]);
 }

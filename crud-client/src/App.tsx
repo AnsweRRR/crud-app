@@ -4,7 +4,6 @@ import { ColorProvider } from "./components/color-provider";
 import { BrowserRouter } from 'react-router-dom';
 import Router from './routes';
 import { Toaster } from "./components/ui/sonner";
-import { Layout } from "./components/layout";
 
 const App = () => {
   return (
@@ -12,9 +11,7 @@ const App = () => {
       <ThemeProvider>
         <ColorProvider>
           <SidebarProvider>
-            <Layout>
-              <Router />
-            </Layout>
+            <Router />
             <Toaster position="top-right" />
           </SidebarProvider>
         </ColorProvider>

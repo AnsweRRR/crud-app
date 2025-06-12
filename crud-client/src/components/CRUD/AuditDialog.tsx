@@ -9,6 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { fDate } from "@/utils/formatTime";
 import type { Audit } from "@/@types/audit";
+import LoadingScreen from "../LoadingScreen";
 
 type AuditDialogProps = {
   auditData: Audit | null;
@@ -35,7 +36,7 @@ const AuditDialog = ({ auditData, auditOpen, setAuditOpen } : AuditDialogProps) 
             <div><strong>Módosította:</strong> {auditData.modifiedBy}</div>
           </div>
         ) : (
-          <div>Betöltés...</div>
+          <LoadingScreen />
         )}
         <DialogFooter>
           <Button variant="outline" onClick={() => setAuditOpen(false)}>Bezárás</Button>
