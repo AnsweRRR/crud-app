@@ -1,11 +1,10 @@
-import { AppSidebar } from "./components/app-sidebar";
 import { SidebarProvider } from "./components/ui/sidebar";
-import { Navbar } from "./components/ui/navbar";
 import { ThemeProvider } from "./components/theme-provider";
 import { ColorProvider } from "./components/color-provider";
 import { BrowserRouter } from 'react-router-dom';
 import Router from './routes';
 import { Toaster } from "./components/ui/sonner";
+import { Layout } from "./components/layout";
 
 const App = () => {
   return (
@@ -13,11 +12,9 @@ const App = () => {
       <ThemeProvider>
         <ColorProvider>
           <SidebarProvider>
-            <AppSidebar />
-            <div className="flex flex-1 flex-col">
-              <Navbar />
+            <Layout>
               <Router />
-            </div>
+            </Layout>
             <Toaster position="top-right" />
           </SidebarProvider>
         </ColorProvider>

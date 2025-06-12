@@ -37,7 +37,6 @@ type CrudPageProps<T> = {
   remove: (ids: Array<number>) => Promise<Array<number>>;
   activate: (ids: Array<number>) => Promise<Array<number>>;
   inactivate: (ids: Array<number>) => Promise<Array<number>>;
-  refresh: () => Promise<void>;
   audit: (id: number) => Promise<Audit>;
   columns: ColumnConfig<T>[];
   fields: FieldConfig<T>[];
@@ -161,7 +160,7 @@ export default function CrudPage<T extends { id: number }>({
   ];
 
   return (
-    <div className="p-6 h-[calc(100vh-4rem)] flex flex-col">
+    <div className="p-6 flex flex-col h-full">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-2xl font-bold">{title}</h2>
         <CrudEditorDialog
@@ -181,7 +180,7 @@ export default function CrudPage<T extends { id: number }>({
         <AuditDialog auditData={auditData} auditOpen={auditOpen} setAuditOpen={setAuditOpen} />
       </div>
 
-      <div className="flex-1">
+      <div className="flex-1 flex flex-col min-h-0">
         <DataTable 
           columns={tableColumns} 
           data={data} 

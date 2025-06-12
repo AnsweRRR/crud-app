@@ -86,87 +86,85 @@ export function DataTable<TData extends { id: number }, TValue>({
 
   return (
     <div className="flex flex-col h-full">
-      <div className="flex-1 space-y-4">
+      <div className="flex-1 space-y-4 min-h-0">
         <DataTableToolbar table={table} />
-        <div className="rounded-md border flex-1">
+        <div className="rounded-md border flex-1 overflow-auto">
           <div className="relative">
-            <div className="overflow-x-auto">
-              <Table>
-                <TableHeader>
-                  {table.getHeaderGroups().map((headerGroup) => (
-                    <TableRow key={headerGroup.id}>
-                      <TableHead className="w-[50px]">
+            <Table>
+              <TableHeader>
+                {table.getHeaderGroups().map((headerGroup) => (
+                  <TableRow key={headerGroup.id}>
+                    <TableHead className="w-[50px]">
+                      <Checkbox
+                        checked={
+                          table.getIsAllPageRowsSelected() ||
+                          (table.getIsSomePageRowsSelected() && "indeterminate")
+                        }
+                        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+                        aria-label="Összes kijelölése"
+                      />
+                    </TableHead>
+                    {headerGroup.headers.map((header) => {
+                      return (
+                        <TableHead 
+                          key={header.id}
+                          className={`
+                            ${header.id === "actions" ? "text-right w-[150px] sticky right-0 bg-background shadow-[-8px_0_16px_-6px_rgba(0,0,0,0.1)]" : ""}
+                          `}
+                        >
+                          {header.isPlaceholder
+                            ? null
+                            : flexRender(
+                                header.column.columnDef.header,
+                                header.getContext()
+                              )}
+                        </TableHead>
+                      )
+                    })}
+                  </TableRow>
+                ))}
+              </TableHeader>
+              <TableBody>
+                {table.getRowModel().rows?.length ? (
+                  table.getRowModel().rows.map((row) => (
+                    <TableRow
+                      key={row.id}
+                      data-state={row.getIsSelected() && "selected"}
+                    >
+                      <TableCell>
                         <Checkbox
-                          checked={
-                            table.getIsAllPageRowsSelected() ||
-                            (table.getIsSomePageRowsSelected() && "indeterminate")
-                          }
-                          onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-                          aria-label="Összes kijelölése"
+                          checked={row.getIsSelected()}
+                          onCheckedChange={(value) => row.toggleSelected(!!value)}
+                          aria-label="Sor kijelölése"
                         />
-                      </TableHead>
-                      {headerGroup.headers.map((header) => {
-                        return (
-                          <TableHead 
-                            key={header.id}
-                            className={`
-                              ${header.id === "actions" ? "text-right w-[150px] sticky right-0 bg-background shadow-[-8px_0_16px_-6px_rgba(0,0,0,0.1)]" : ""}
-                            `}
-                          >
-                            {header.isPlaceholder
-                              ? null
-                              : flexRender(
-                                  header.column.columnDef.header,
-                                  header.getContext()
-                                )}
-                          </TableHead>
-                        )
-                      })}
-                    </TableRow>
-                  ))}
-                </TableHeader>
-                <TableBody>
-                  {table.getRowModel().rows?.length ? (
-                    table.getRowModel().rows.map((row) => (
-                      <TableRow
-                        key={row.id}
-                        data-state={row.getIsSelected() && "selected"}
-                      >
-                        <TableCell>
-                          <Checkbox
-                            checked={row.getIsSelected()}
-                            onCheckedChange={(value) => row.toggleSelected(!!value)}
-                            aria-label="Sor kijelölése"
-                          />
-                        </TableCell>
-                        {row.getVisibleCells().map((cell) => (
-                          <TableCell 
-                            key={cell.id}
-                            className={`
-                              ${cell.column.id === "actions" ? "text-right w-[150px] sticky right-0 bg-background shadow-[-8px_0_16px_-6px_rgba(0,0,0,0.1)]" : ""}
-                            `}
-                          >
-                            {flexRender(
-                              cell.column.columnDef.cell,
-                              cell.getContext()
-                            )}
-                          </TableCell>
-                        ))}
-                      </TableRow>
-                    ))
-                  ) : (
-                    <TableRow>
-                      <TableCell
-                        colSpan={columns.length + 1}
-                        className="h-24 text-center"
-                      >
-                        Nincs találat.
                       </TableCell>
+                      {row.getVisibleCells().map((cell) => (
+                        <TableCell 
+                          key={cell.id}
+                          className={`
+                            ${cell.column.id === "actions" ? "text-right w-[150px] sticky right-0 bg-background shadow-[-8px_0_16px_-6px_rgba(0,0,0,0.1)]" : ""}
+                          `}
+                        >
+                          {flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext()
+                          )}
+                        </TableCell>
+                      ))}
                     </TableRow>
-                  )}
-                </TableBody>
-              </Table>
-            </div>
+                  ))
+                ) : (
+                  <TableRow>
+                    <TableCell
+                      colSpan={columns.length + 1}
+                      className="h-24 text-center"
+                    >
+                      Nincs találat.
+                    </TableCell>
+                  </TableRow>
+                )}
+              </TableBody>
+            </Table>
           </div>
         </div>
       </div>
