@@ -10,6 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\crud-api.DataAccess\crud-api.DataAccess.csproj" />
     <ProjectReference Include="..\crud-api.Model\crud-api.Model.csproj" />
+    <ProjectReference Include="..\crud-api.Utils\crud-api.Utils.csproj" />
   </ItemGroup>
 
 </Project>
