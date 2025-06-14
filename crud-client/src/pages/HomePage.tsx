@@ -1,7 +1,7 @@
-import { useTranslation } from "react-i18next"
+import useLocales from '../locales/useLocales'
 
 export default function HomePage() {
-  const { t } = useTranslation()
+  const { translate: t } = useLocales()
 
   return (
     <div className="container mx-auto p-4">

@@ -6,7 +6,7 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu"
 import { Check, Palette } from "lucide-react"
-import { useTranslation } from "react-i18next"
+import useLocales from "../locales/useLocales"
 import { useColor } from "./color-provider"
 import { themes } from "@/lib/themes"
 import { useTheme } from "next-themes"
@@ -25,7 +25,7 @@ const colors = [
 
 export function ColorPicker() {
   const { color, setColor } = useColor()
-  const { t } = useTranslation()
+  const { translate: t } = useLocales()
   const { theme: mode } = useTheme()
 
   const applyTheme = (themeName: string) => {

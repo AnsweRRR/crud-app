@@ -17,8 +17,7 @@ export default function useLocales() {
 
   return {
     onChangeLang: handleChangeLanguage,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    translate: (text: string, options?: any) => translate(text, options),
+    translate,
     currentLang,
     allLangs,
   };

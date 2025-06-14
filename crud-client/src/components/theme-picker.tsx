@@ -7,7 +7,7 @@ import {
 } from "./ui/dropdown-menu"
 import { useTheme } from "next-themes"
 import { Check, Palette } from "lucide-react"
-import { useTranslation } from "react-i18next"
+import useLocales from "../locales/useLocales"
 
 const themes = [
   { name: "default", label: "Default", color: "bg-gray-500" },
@@ -22,7 +22,7 @@ const themes = [
 
 export function ThemePicker() {
   const { setTheme, theme } = useTheme()
-  const { t } = useTranslation()
+  const { translate: t } = useLocales()
 
   return (
     <DropdownMenu>

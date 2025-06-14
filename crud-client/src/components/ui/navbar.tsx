@@ -3,7 +3,6 @@ import { Button } from "./button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./select"
 import { Moon, SlashIcon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
-import { useTranslation } from "react-i18next"
 import { ColorPicker } from "../color-picker"
 import { SidebarTrigger } from "./sidebar"
 import { useLocation } from "react-router-dom"
@@ -12,15 +11,15 @@ import useLocales from "../../locales/useLocales"
 
 export function Navbar() {
   const { setTheme, theme } = useTheme()
-  const { t, i18n } = useTranslation()
+  const { translate: t, currentLang } = useLocales()
   const location = useLocation()
   const { allLangs, onChangeLang } = useLocales()
 
   React.useEffect(() => {
-    if (!i18n.language) {
-      i18n.changeLanguage('hu');
+    if (!currentLang.value) {
+      onChangeLang('hu');
     }
-  }, [i18n])
+  }, [currentLang, onChangeLang])
 
   const getBreadcrumbItems = () => {
     const pathSegments = location.pathname.split('/').filter(Boolean);
@@ -70,7 +69,7 @@ export function Navbar() {
         </Breadcrumb>
         <div className="ml-auto flex items-center space-x-4">
           <Select 
-            value={i18n.language} 
+            value={currentLang.value} 
             onValueChange={onChangeLang}
           >
             <SelectTrigger className="min-w-[120px] w-auto">
