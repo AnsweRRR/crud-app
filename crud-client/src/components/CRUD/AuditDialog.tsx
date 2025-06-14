@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { fDate } from "@/utils/formatTime";
 import type { Audit } from "@/@types/audit";
 import LoadingScreen from "../LoadingScreen";
+import useLocales from "@/locales/useLocales";
 
 type AuditDialogProps = {
   auditData: Audit | null;
@@ -18,28 +19,30 @@ type AuditDialogProps = {
 }
 
 const AuditDialog = ({ auditData, auditOpen, setAuditOpen } : AuditDialogProps) => {
+  const { translate: t } = useLocales();
+
   return (
     <Dialog open={auditOpen} onOpenChange={setAuditOpen}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Audit adatok</DialogTitle>
+          <DialogTitle>{t('crud.audit_data')}</DialogTitle>
           <DialogDescription>
-            A kiválasztott elem audit információi.
+            {t('crud.audit_description')}
           </DialogDescription>
         </DialogHeader>
         {auditData ? (
           <div className="grid gap-2 py-4 text-sm">
-            <div><strong>ID:</strong> {auditData.id}</div>
-            <div><strong>Létrehozva:</strong> {fDate(auditData.createDateTime)}</div>
-            <div><strong>Létrehozta:</strong> {auditData.createdBy}</div>
-            <div><strong>Módosítva:</strong> {fDate(auditData.modifyDateTime)}</div>
-            <div><strong>Módosította:</strong> {auditData.modifiedBy}</div>
+            <div><strong>{t('crud.id')}:</strong> {auditData.id}</div>
+            <div><strong>{t('crud.created_at')}:</strong> {fDate(auditData.createDateTime)}</div>
+            <div><strong>{t('crud.created_by')}:</strong> {auditData.createdBy}</div>
+            <div><strong>{t('crud.modified_at')}:</strong> {fDate(auditData.modifyDateTime)}</div>
+            <div><strong>{t('crud.modified_by')}:</strong> {auditData.modifiedBy}</div>
           </div>
         ) : (
           <LoadingScreen />
         )}
         <DialogFooter>
-          <Button variant="outline" onClick={() => setAuditOpen(false)}>Bezárás</Button>
+          <Button variant="outline" onClick={() => setAuditOpen(false)}>{t('crud.close')}</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

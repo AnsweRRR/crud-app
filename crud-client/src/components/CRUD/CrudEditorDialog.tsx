@@ -22,6 +22,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Trash } from "lucide-react";
 import { useState } from "react";
+import useLocales from "@/locales/useLocales";
 
 type CrudEditorDialogProps<T> = {
   fields: FieldConfig<T>[];
@@ -50,6 +51,7 @@ function CrudEditorDialog<T extends { id: number }> ({
   selectedRows,
   onDelete
 } : CrudEditorDialogProps<T>) {
+  const { translate: t } = useLocales();
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
 
   const reset = () => {
@@ -82,32 +84,32 @@ function CrudEditorDialog<T extends { id: number }> ({
             disabled={selectedRows.length === 0}
           >
             <Trash size={16} />
-            Kijelölt elemek törlése
+            {t('crud.bulk_delete')}
           </Button>
         </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Biztosan törölni szeretnéd a kijelölt elemeket?</AlertDialogTitle>
+            <AlertDialogTitle>{t('crud.bulk_delete_confirm')}</AlertDialogTitle>
             <AlertDialogDescription>
-              {selectedRows.length} db kijelölt elem törlésre kerül. Ez a művelet nem vonható vissza.
+              {selectedRows.length} {t('crud.selected_items')}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Mégse</AlertDialogCancel>
-            <AlertDialogAction onClick={handleDelete}>Törlés</AlertDialogAction>
+            <AlertDialogCancel>{t('crud.cancel')}</AlertDialogCancel>
+            <AlertDialogAction onClick={handleDelete}>{t('crud.delete')}</AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <Button onClick={reset} className="h-10">Új létrehozása</Button>
+          <Button onClick={reset} className="h-10">{t('crud.create')}</Button>
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>{editing ? "Szerkesztés" : "Új elem"}</DialogTitle>
+            <DialogTitle>{editing ? t('crud.update') : t('crud.create')}</DialogTitle>
             <DialogDescription>
-              Töltsd ki az alábbi mezőket, majd kattints a Mentés gombra.
+              {t('crud.fill_fields')}
             </DialogDescription>
           </DialogHeader>
           <div className="grid gap-4 py-4">
@@ -125,9 +127,9 @@ function CrudEditorDialog<T extends { id: number }> ({
           </div>
           <DialogFooter>
             <Button variant="outline" onClick={() => setOpen(false)}>
-              Mégse
+              {t('crud.cancel')}
             </Button>
-            <Button onClick={handleSubmit}>Mentés</Button>
+            <Button onClick={handleSubmit}>{t('crud.save')}</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>

@@ -9,6 +9,7 @@ import AuditDialog from "./AuditDialog";
 import CrudEditorDialog from "./CrudEditorDialog";
 import type { ColumnDef, Column } from "@tanstack/react-table";
 import { DataTable } from "@/components/ui/data-table";
+import useLocales from "@/locales/useLocales";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -54,6 +55,7 @@ export default function CrudPage<T extends { id: number }>({
   remove,
   audit
 }: CrudPageProps<T>) {
+  const { translate: t } = useLocales();
   const [formData, setFormData] = useState<Partial<T>>({});
   const [editing, setEditing] = useState<T | null>(null);
   const [open, setOpen] = useState(false);
@@ -111,7 +113,7 @@ export default function CrudPage<T extends { id: number }>({
     })),
     {
       id: "actions",
-      header: "Műveletek",
+      header: t('crud.actions'),
       cell: ({ row }: { row: { original: T } }) => {
         const item = row.original;
         return (
@@ -120,6 +122,7 @@ export default function CrudPage<T extends { id: number }>({
               size="icon"
               variant="outline"
               onClick={() => handleAuditOpen(item.id)}
+              title={t('crud.audit')}
             >
               <History size={16} />
             </Button>
@@ -127,6 +130,7 @@ export default function CrudPage<T extends { id: number }>({
               size="icon"
               variant="outline"
               onClick={() => startEdit(item)}
+              title={t('crud.edit')}
             >
               <Pencil size={16} />
             </Button>
@@ -136,20 +140,21 @@ export default function CrudPage<T extends { id: number }>({
                   size="icon"
                   variant="destructive"
                   onClick={() => setItemToDelete(item.id)}
+                  title={t('crud.delete')}
                 >
                   <Trash size={16} />
                 </Button>
               </AlertDialogTrigger>
               <AlertDialogContent>
                 <AlertDialogHeader>
-                  <AlertDialogTitle>Biztosan törölni szeretnéd ezt az elemet?</AlertDialogTitle>
+                  <AlertDialogTitle>{t('crud.delete_confirm_title')}</AlertDialogTitle>
                   <AlertDialogDescription>
-                    Ez a művelet nem vonható vissza.
+                    {t('crud.delete_confirm_description')}
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
-                  <AlertDialogCancel onClick={() => setItemToDelete(null)}>Mégse</AlertDialogCancel>
-                  <AlertDialogAction onClick={() => handleDelete([item.id])}>Törlés</AlertDialogAction>
+                  <AlertDialogCancel onClick={() => setItemToDelete(null)}>{t('crud.cancel')}</AlertDialogCancel>
+                  <AlertDialogAction onClick={() => handleDelete([item.id])}>{t('crud.delete')}</AlertDialogAction>
                 </AlertDialogFooter>
               </AlertDialogContent>
             </AlertDialog>

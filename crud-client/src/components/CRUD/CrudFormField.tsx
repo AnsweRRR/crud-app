@@ -4,6 +4,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import type { ChangeEvent } from "react";
+import useLocales from "@/locales/useLocales";
 
 export type FieldConfig<T> = {
   name: keyof T;
@@ -19,6 +20,8 @@ type CrudFormFieldProps<T> = {
 };
 
 export default function CrudFormField<T>({ field, value, onChange }: CrudFormFieldProps<T>) {
+  const { translate: t } = useLocales();
+
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const val = field.type === "number" ? Number(e.target.value) : e.target.value;
     onChange(field.name, val as T[keyof T]);
@@ -70,7 +73,7 @@ export default function CrudFormField<T>({ field, value, onChange }: CrudFormFie
             onValueChange={(val) => onChange(field.name, val as T[keyof T])}
           >
             <SelectTrigger>
-              <SelectValue placeholder="Válassz..." />
+              <SelectValue placeholder={t('crud.select_placeholder')} />
             </SelectTrigger>
             <SelectContent>
               {field.options?.map((opt) => (
