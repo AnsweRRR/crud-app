@@ -37,7 +37,7 @@ const hu = {
     success: 'Sikeres művelet',
     select_all: 'Összes kiválasztása',
     deselect_all: 'Kijelölés megszüntetése',
-    selected_items: 'Kiválasztott elemek',
+    selected_items: 'Kiválasztott elem',
     bulk_delete: 'Tömeges törlés',
     bulk_delete_confirm: 'Biztosan törölni szeretnéd a kiválasztott elemeket?',
     bulk_delete_success: 'A kiválasztott elemek sikeresen törölve',
@@ -57,6 +57,78 @@ const hu = {
     modified_at: 'Módosítva',
     modified_by: 'Módosította',
     select_placeholder: 'Válassz...'
+  },
+  ui: {
+    table: {
+      select_all: 'Összes kijelölése',
+      select_row: 'Sor kijelölése',
+      no_results: 'Nincs találat',
+      rows_per_page: 'Sorok száma oldalanként',
+      of: 'az összesből',
+      next_page: 'Következő oldal',
+      previous_page: 'Előző oldal',
+      first_page: 'Első oldal',
+      last_page: 'Utolsó oldal',
+      search: 'Keresés...',
+      columns: 'Oszlopok',
+      show_columns: 'Oszlopok megjelenítése',
+      hide_columns: 'Oszlopok elrejtése',
+      filter: 'Szűrés',
+      clear_filters: 'Szűrők törlése',
+      export: 'Exportálás',
+      refresh: 'Frissítés'
+    },
+    dialog: {
+      close: 'Bezárás'
+    },
+    button: {
+      save: 'Mentés',
+      cancel: 'Mégse',
+      delete: 'Törlés',
+      edit: 'Szerkesztés',
+      create: 'Létrehozás',
+      update: 'Frissítés',
+      search: 'Keresés',
+      filter: 'Szűrés',
+      export: 'Exportálás',
+      refresh: 'Frissítés',
+      close: 'Bezárás'
+    },
+    input: {
+      search: 'Keresés...',
+      filter: 'Szűrés...'
+    },
+    select: {
+      placeholder: 'Válassz...',
+      no_options: 'Nincs találat',
+      loading: 'Betöltés...'
+    },
+    checkbox: {
+      select_all: 'Összes kijelölése',
+      select_row: 'Sor kijelölése'
+    }
+  },
+  pages: {
+    users: {
+      title: 'Felhasználók',
+      columns: {
+        name: 'Név',
+        comment: 'Megjegyzés',
+        isActive: 'Aktív',
+        role: 'Szerep'
+      },
+      fields: {
+        name: 'Név',
+        comment: 'Megjegyzés',
+        isActive: 'Aktív',
+        role: 'Szerep'
+      },
+      roles: {
+        admin: 'Admin',
+        user: 'Felhasználó',
+        guest: 'Vendég'
+      }
+    }
   }
 }
 

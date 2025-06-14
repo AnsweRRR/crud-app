@@ -27,6 +27,7 @@ import {
 import { DataTableFooter } from "./data-table-footer"
 import { DataTableToolbar } from "./data-table-toolbar"
 import { Checkbox } from "@/components/ui/checkbox"
+import useLocales from "@/locales/useLocales"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -39,6 +40,7 @@ export function DataTable<TData extends { id: number }, TValue>({
   data,
   onRowSelectionChange,
 }: DataTableProps<TData, TValue>) {
+  const { translate: t } = useLocales();
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
   const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({})
@@ -101,7 +103,7 @@ export function DataTable<TData extends { id: number }, TValue>({
                           (table.getIsSomePageRowsSelected() && "indeterminate")
                         }
                         onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-                        aria-label="Összes kijelölése"
+                        aria-label={t('ui.table.select_all')}
                       />
                     </TableHead>
                     {headerGroup.headers.map((header) => {
@@ -135,7 +137,7 @@ export function DataTable<TData extends { id: number }, TValue>({
                         <Checkbox
                           checked={row.getIsSelected()}
                           onCheckedChange={(value) => row.toggleSelected(!!value)}
-                          aria-label="Sor kijelölése"
+                          aria-label={t('ui.table.select_row')}
                         />
                       </TableCell>
                       {row.getVisibleCells().map((cell) => (
@@ -159,7 +161,7 @@ export function DataTable<TData extends { id: number }, TValue>({
                       colSpan={columns.length + 1}
                       className="h-24 text-center"
                     >
-                      Nincs találat.
+                      {t('ui.table.no_results')}
                     </TableCell>
                   </TableRow>
                 )}

@@ -57,6 +57,78 @@ const en = {
     modified_at: 'Modified At',
     modified_by: 'Modified By',
     select_placeholder: 'Select...'
+  },
+  ui: {
+    table: {
+      select_all: 'Select all',
+      select_row: 'Select row',
+      no_results: 'No results found',
+      rows_per_page: 'Rows per page',
+      of: 'of',
+      next_page: 'Next page',
+      previous_page: 'Previous page',
+      first_page: 'First page',
+      last_page: 'Last page',
+      search: 'Search...',
+      columns: 'Columns',
+      show_columns: 'Show columns',
+      hide_columns: 'Hide columns',
+      filter: 'Filter',
+      clear_filters: 'Clear filters',
+      export: 'Export',
+      refresh: 'Refresh'
+    },
+    dialog: {
+      close: 'Close'
+    },
+    button: {
+      save: 'Save',
+      cancel: 'Cancel',
+      delete: 'Delete',
+      edit: 'Edit',
+      create: 'Create',
+      update: 'Update',
+      search: 'Search',
+      filter: 'Filter',
+      export: 'Export',
+      refresh: 'Refresh',
+      close: 'Close'
+    },
+    input: {
+      search: 'Search...',
+      filter: 'Filter...'
+    },
+    select: {
+      placeholder: 'Select...',
+      no_options: 'No options',
+      loading: 'Loading...'
+    },
+    checkbox: {
+      select_all: 'Select all',
+      select_row: 'Select row'
+    }
+  },
+  pages: {
+    users: {
+      title: 'Users',
+      columns: {
+        name: 'Name',
+        comment: 'Comment',
+        isActive: 'Active',
+        role: 'Role'
+      },
+      fields: {
+        name: 'Name',
+        comment: 'Comment',
+        isActive: 'Active',
+        role: 'Role'
+      },
+      roles: {
+        admin: 'Admin',
+        user: 'User',
+        guest: 'Guest'
+      }
+    }
   }
 }
 

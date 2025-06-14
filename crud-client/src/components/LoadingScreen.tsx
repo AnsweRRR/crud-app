@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils"
+import useLocales from "@/locales/useLocales"
 import { Loader2 } from "lucide-react"
 
 interface LoadingScreenProps {
@@ -8,6 +9,8 @@ interface LoadingScreenProps {
 }
 
 const LoadingScreen = ({ image, className, size = "md" }: LoadingScreenProps) => {
+  const { translate: t } = useLocales();
+
   const sizeClasses = {
     sm: "w-8 h-8",
     md: "w-12 h-12",
@@ -34,7 +37,7 @@ const LoadingScreen = ({ image, className, size = "md" }: LoadingScreenProps) =>
         sizeClasses[size]
       )} />
       <p className="mt-4 text-sm text-muted-foreground animate-pulse">
-        Töltés...
+        {t('crud.loading')}
       </p>
     </div>
   )

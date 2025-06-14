@@ -10,6 +10,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu"
+import useLocales from "@/locales/useLocales"
 
 interface DataTableViewOptionsProps<TData> {
   table: Table<TData>
@@ -18,6 +19,8 @@ interface DataTableViewOptionsProps<TData> {
 export function DataTableViewOptions<TData>({
   table,
 }: DataTableViewOptionsProps<TData>) {
+  const { translate: t } = useLocales();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -27,11 +30,11 @@ export function DataTableViewOptions<TData>({
           className="ml-auto hidden h-8 lg:flex"
         >
           <MixerHorizontalIcon className="mr-2 h-4 w-4" />
-          Nézet
+          {t('ui.table.columns')}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[150px]">
-        <DropdownMenuLabel>Oszlopok</DropdownMenuLabel>
+        <DropdownMenuLabel>{t('ui.table.columns')}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         {table
           .getAllColumns()
