@@ -4,20 +4,17 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { Moon, SlashIcon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useTranslation } from "react-i18next"
-import { GB, HU } from 'country-flag-icons/react/3x2'
 import { ColorPicker } from "../color-picker"
 import { SidebarTrigger } from "./sidebar"
 import { useLocation } from "react-router-dom"
 import React from "react"
+import useLocales from "../../locales/useLocales"
 
 export function Navbar() {
   const { setTheme, theme } = useTheme()
   const { t, i18n } = useTranslation()
   const location = useLocation()
-
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng)
-  }
+  const { allLangs, onChangeLang } = useLocales()
 
   React.useEffect(() => {
     if (!i18n.language) {
@@ -74,20 +71,18 @@ export function Navbar() {
         <div className="ml-auto flex items-center space-x-4">
           <Select 
             value={i18n.language} 
-            onValueChange={changeLanguage}
+            onValueChange={onChangeLang}
           >
-            <SelectTrigger className="w-[120px]">
+            <SelectTrigger className="min-w-[120px] w-auto">
               <SelectValue placeholder={t('language')} />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="hu" className="flex items-center gap-2">
-                <HU className="w-4 h-4" />
-                <span>Magyar</span>
-              </SelectItem>
-              <SelectItem value="en" className="flex items-center gap-2">
-                <GB className="w-4 h-4" />
-                <span>English</span>
-              </SelectItem>
+              {allLangs.map((lang) => (
+                <SelectItem key={lang.value} value={lang.value} className="flex items-center gap-2">
+                  {React.createElement(lang.icon, { className: "w-4 h-4" })}
+                  <span>{lang.label}</span>
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
           <ColorPicker />
