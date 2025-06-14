@@ -2,6 +2,10 @@ const en = {
   home: 'Home',
   users: 'Users',
   language: 'Language',
+  languages: {
+    en: 'English',
+    hu: 'Hungarian'
+  },
   theme: 'Theme',
   light: 'Light',
   dark: 'Dark',

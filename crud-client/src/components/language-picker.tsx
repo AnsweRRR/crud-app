@@ -17,7 +17,7 @@ export function LanguagePicker() {
         {allLangs.map((lang) => (
           <SelectItem key={lang.value} value={lang.value} className="flex items-center gap-2">
             {React.createElement(lang.icon, { className: "w-4 h-4" })}
-            <span>{lang.label}</span>
+            <span>{t(`languages.${lang.value}`)}</span>
           </SelectItem>
         ))}
       </SelectContent>

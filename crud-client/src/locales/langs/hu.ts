@@ -2,6 +2,10 @@ const hu = {
   home: 'Főoldal',
   users: 'Felhasználók',
   language: 'Nyelv',
+  languages: {
+    en: 'Angol',
+    hu: 'Magyar'
+  },
   theme: 'Téma',
   light: 'Világos',
   dark: 'Sötét',
